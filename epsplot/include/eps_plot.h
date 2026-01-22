@@ -1131,6 +1131,7 @@ namespace	epsplot
 				uiRet = m_cZ_Axis_Parameters.size();
 				break;
 			}
+			return uiRet;
 		}
 		unsigned int	Get_Num_X_Axes(void) const {return Get_Num_Axes(X_AXIS);};
 		unsigned int	Get_Num_Y_Axes(void) const {return Get_Num_Axes(Y_AXIS);};
