@@ -534,7 +534,7 @@ DATABASE::~DATABASE(void)
 
 bool DATABASE::Database_Exists(void) const
 {
-	bool bRet = m_dFile_Version != 0.0;
+	return  m_dFile_Version != 0.0;
 }
 
 SPECTRUM_TYPE msdb::Identify_Spectrum_Type(const PARAMETERS & i_cParameters)

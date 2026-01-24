@@ -38,6 +38,7 @@ namespace msdb
 				std::cerr << "msdb: line reference energy unknown for ion " << uiIon << std::endl;
 			break;
 		}
+		return dRet;
 	}
 	inline bool	Test_Ion(FEATURE i_eFeature, unsigned int i_uiIon)
 	{
