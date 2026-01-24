@@ -61,7 +61,6 @@ share/Opacity-Project/config_reprocess
 Makefile.in
 Makefile
 ar-lib
-configure
 m4/libtool.m4
 ltoptions.m4
 ltsugar.m4
