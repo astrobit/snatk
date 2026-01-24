@@ -8,7 +8,7 @@ libmsdb_la_LDFLAGS = -version-info 0:0:0
 sbin_PROGRAMS = genmsdb
 genmsdb_SOURCES = src/gen_msdb.cpp
 genmsdp_CXXFLAGS =  ${xstdlib_CFLAGS}
-genmsdb_LDADD = -lmsdb ${es_LIBS}
+genmsdb_LDADD = libmsdb.la ${es_LIBS}
 
 include_HEADERS = include/model_spectra_db.h
 
