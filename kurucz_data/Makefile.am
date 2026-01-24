@@ -1,13 +1,14 @@
 AUTOMAKE_OPTIONS = foreign subdir-objects
 AM_CPPFLAGS = -I${srcdir}/include -DDATADIR=\"$(pkgdatadir)\" ${es_CFLAGS} ${xastro_CFLAGS} ${radiation_CFLAGS} ${linerout_CFLAGS} ${msdb_CFLAGS} ${opacity_profile_CFLAGS} ${xmath_CFLAGS} ${velocity_field_CFLAGS}
 
-noinst_PROGRAMS = testkurucz
 lib_LTLIBRARIES = libkurucz_data.la
 libkurucz_data_la_SOURCES = src/kdd_compute_H_Z.cpp src/kdd_initialize.cpp src/kdd_process_level.cpp src/kld_operators.cpp src/klnd_labels.cpp src/klnd_mw18.cpp src/klnd_process_datafile_line.cpp src/kurucz_data.cpp src/ld_constructor.cpp src/ld_operators.cpp
 libkurucz_data_la_LDFLAGS = -version-info 1:0:1
 
+noinst_PROGRAMS = testkurucz
+
 testkurucz_SOURCES = src/testkurucz.cpp
-testkurucz_LDFLAGS = -lkurucz_data ${es_LIBS} ${xastro_LIBS} ${radiation_LIBS} ${linerout_LIBS} ${msdb_LIBS} ${opacity_profile_LIBS} ${xmath_LIBS}
+testkurucz_LDADD = libkurucz_data.la ${es_LIBS} ${xastro_LIBS} ${radiation_LIBS} ${linerout_LIBS} ${msdb_LIBS} ${opacity_profile_LIBS} ${xmath_LIBS}
 
 # Install the pkg-config file; the directory is set using
 # PKG_INSTALLDIR in configure.ac.

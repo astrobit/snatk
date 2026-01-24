@@ -9,13 +9,13 @@ libopacity_project_la_LDFLAGS = -version-info 2:0:2
 include_HEADERS = include/opacity_project_pp.h
 
 opquikread_SOURCES = src/quikread.cpp
-opquikread_LDADD =  -lopacity_project ${xastro_LIBS}  ${xstdlib_LIBS}
+opquikread_LDADD =  libopacity_project.la ${xastro_LIBS}  ${xstdlib_LIBS}
 
 testopp_SOURCES = src/testOPP.cpp
-testopp_LDADD =  -lopacity_project ${xastro_LIBS}  ${xstdlib_LIBS}
+testopp_LDADD =  libopacity_project.la ${xastro_LIBS}  ${xstdlib_LIBS}
 
 op_config_reprocess_SOURCES = src/config_reprocess.cpp
-op_config_reprocess_LDADD = -lopacity_project ${xastro_LIBS} ${radiation_LIBS} ${velocity_field_LIBS}
+op_config_reprocess_LDADD = libopacity_project.la ${xastro_LIBS} ${radiation_LIBS} ${velocity_field_LIBS}
 
 # Install the pkg-config file; the directory is set using
 # PKG_INSTALLDIR in configure.ac.
